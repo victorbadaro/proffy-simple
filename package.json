@@ -10,9 +10,7 @@
     "browsersync": "browser-sync start --proxy http://localhost:3333 --files 'src/views' 'public'"
   },
   "nodemonConfig": {
-    "ignore": [
-      "public"
-    ]
+    "ignore": ["public", "src/database/database.sqlite"]
   },
   "repository": {
     "type": "git",
