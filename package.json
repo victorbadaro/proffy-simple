@@ -27,7 +27,8 @@
   "homepage": "https://github.com/victorbadaro/proffy-simple#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "nunjucks": "^3.2.2"
+    "nunjucks": "^3.2.2",
+    "sqlite-async": "^1.1.0"
   },
   "devDependencies": {
     "browser-sync": "^2.26.13",
