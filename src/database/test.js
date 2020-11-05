@@ -10,7 +10,7 @@ Database.then(async (db) => {
     }
 
     classValue = {
-        subject: 'Educação Física',
+        subject: 1,
         cost: '20'
     }
 
@@ -30,5 +30,23 @@ Database.then(async (db) => {
     // await createProffy(db, { proffyValue, classValue, classScheduleValues })
 
     const selectedProffys = await db.all('SELECT * FROM proffys')
-    console.log(selectedProffys)
+    // console.log(selectedProffys)
+
+    const selectClassesAndProffys = await db.all(`
+        SELECT *
+        FROM proffys
+        INNER JOIN classes ON (proffys.id = classes.proffy_id)
+        WHERE proffys.id = 1
+    `)
+    // console.log(selectClassesAndProffys)
+
+    const selectClassesSchedules = await db.all(`
+        SELECT *
+        FROM classes_schedule
+        WHERE class_id = 1
+        AND weekday = 0
+        AND time_from <= 1300
+        AND time_to > 1300
+    `)
+    console.log(selectClassesSchedules)
 })
